@@ -1,0 +1,173 @@
+[
+    {
+        "precio": "289100",
+        "segmento": [
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "XS",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            },
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "XS",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            }
+        ]
+    },
+    {
+        "precio": "299180",
+        "segmento": [
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "XS",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            },
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "S",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            }
+        ]
+    },
+    {
+        "precio": "299180",
+        "segmento": [
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "S",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            },
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "XS",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            }
+        ]
+    },
+    {
+        "precio": "309260",
+        "segmento": [
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "S",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            },
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "S",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            }
+        ]
+    },
+    {
+        "precio": "325740",
+        "segmento": [
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "XS",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            },
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "M",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            }
+        ]
+    },
+    {
+        "precio": "325740",
+        "segmento": [
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "M",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            },
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "XS",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            }
+        ]
+    },
+    {
+        "precio": "335820",
+        "segmento": [
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "S",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            },
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "M",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            }
+        ]
+    },
+    {
+        "precio": "335820",
+        "segmento": [
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "M",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            },
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "S",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            }
+        ]
+    },
+    {
+        "precio": "362380",
+        "segmento": [
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "M",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            },
+            {
+                "idSegmento": 0,
+                "familiaTarifaria": "M",
+                "cabinaCode": "M",
+                "cabinaClase": "Economica Estandar",
+                "equipaje": "N"
+            }
+        ]
+    }
+]

@@ -1,0 +1,44 @@
+[01-Jul-2020 04:24:33 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn.php on line 73
+[01-Jul-2020 04:25:15 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn.php on line 73
+[01-Jul-2020 04:26:16 UTC] PHP Notice:  Undefined index: fileToUpload in /home/tupm4k9nwuip/public_html/Saaty/production/core/enviar.php on line 7
+[01-Jul-2020 04:33:53 UTC] PHP Warning:  move_uploaded_file(/Saaty/production/core/tempDoc/Actividad 2 Elvira.pdf): failed to open stream: No such file or directory in /home/tupm4k9nwuip/public_html/Saaty/production/core/enviar.php on line 10
+[01-Jul-2020 04:33:53 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpyRrphH' to '/Saaty/production/core/tempDoc/Actividad 2 Elvira.pdf' in /home/tupm4k9nwuip/public_html/Saaty/production/core/enviar.php on line 10
+[01-Jul-2020 04:45:01 UTC] PHP Warning:  fopen(): Filename cannot be empty in /home/tupm4k9nwuip/public_html/Saaty/production/core/descargar.php on line 9
+[01-Jul-2020 04:45:01 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/tupm4k9nwuip/public_html/Saaty/production/core/descargar.php on line 11
+[01-Jul-2020 04:45:01 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/tupm4k9nwuip/public_html/Saaty/production/core/descargar.php on line 12
+[01-Jul-2020 04:48:41 UTC] PHP Warning:  fopen(): Filename cannot be empty in /home/tupm4k9nwuip/public_html/Saaty/production/core/descargar.php on line 9
+[01-Jul-2020 04:48:41 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/tupm4k9nwuip/public_html/Saaty/production/core/descargar.php on line 11
+[01-Jul-2020 04:48:41 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/tupm4k9nwuip/public_html/Saaty/production/core/descargar.php on line 12
+[01-Jul-2020 04:51:25 UTC] PHP Warning:  fopen(): Filename cannot be empty in /home/tupm4k9nwuip/public_html/Saaty/production/core/descargar.php on line 9
+[01-Jul-2020 04:51:25 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/tupm4k9nwuip/public_html/Saaty/production/core/descargar.php on line 11
+[01-Jul-2020 04:51:25 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/tupm4k9nwuip/public_html/Saaty/production/core/descargar.php on line 12
+[01-Jul-2020 05:31:54 UTC] PHP Notice:  Undefined index: color in /home/tupm4k9nwuip/public_html/Saaty/production/core/Page2.php on line 8
+[01-Jul-2020 05:31:54 UTC] PHP Notice:  Undefined index: animal in /home/tupm4k9nwuip/public_html/Saaty/production/core/Page2.php on line 9
+[01-Jul-2020 05:31:54 UTC] PHP Notice:  Undefined index: login in /home/tupm4k9nwuip/public_html/Saaty/production/core/Page2.php on line 10
+[01-Jul-2020 05:31:54 UTC] PHP Notice:  Undefined index: instante in /home/tupm4k9nwuip/public_html/Saaty/production/core/Page2.php on line 11
+[01-Jul-2020 05:32:19 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn.php on line 73
+[01-Jul-2020 05:33:49 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/tupm4k9nwuip/public_html/Saaty/production/core/enviar.php on line 30
+[01-Jul-2020 10:12:32 UTC] PHP Notice:  Undefined index: fichero_usuario in /home/tupm4k9nwuip/public_html/Saaty/production/core/enviar.php on line 7
+[01-Jul-2020 10:12:32 UTC] PHP Notice:  Undefined index: fichero_usuario in /home/tupm4k9nwuip/public_html/Saaty/production/core/enviar.php on line 10
+[01-Jul-2020 10:12:32 UTC] PHP Notice:  Undefined index: fichero_usuario in /home/tupm4k9nwuip/public_html/Saaty/production/core/enviar.php on line 22
+[01-Jul-2020 10:12:32 UTC] PHP Notice:  Undefined index: Acceso in /home/tupm4k9nwuip/public_html/Saaty/production/core/enviar.php on line 31
+[01-Jul-2020 10:12:32 UTC] PHP Notice:  Undefined index: Integridad in /home/tupm4k9nwuip/public_html/Saaty/production/core/enviar.php on line 32
+[01-Jul-2020 10:12:32 UTC] PHP Notice:  Undefined index: Disponibilidad in /home/tupm4k9nwuip/public_html/Saaty/production/core/enviar.php on line 33
+[01-Jul-2020 10:13:22 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn.php on line 73
+[01-Jul-2020 10:14:46 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn.php on line 73
+[01-Jul-2020 10:15:03 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn.php on line 73
+[01-Jul-2020 10:16:34 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn.php on line 73
+[01-Jul-2020 10:17:50 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn.php on line 73
+[01-Jul-2020 10:58:32 UTC] PHP Parse error:  syntax error, unexpected '$fileName' (T_VARIABLE) in /home/tupm4k9nwuip/public_html/Saaty/production/core/enviar.php on line 41
+[01-Jul-2020 11:09:05 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/tupm4k9nwuip/public_html/Saaty/production/core/enviar.php:28) in /home/tupm4k9nwuip/public_html/Saaty/production/core/enviar.php on line 99
+[01-Jul-2020 11:58:53 UTC] PHP Notice:  Undefined variable: md5 in /home/tupm4k9nwuip/public_html/Saaty/production/core/enviar.php on line 41
+[01-Jul-2020 12:38:42 UTC] PHP Parse error:  syntax error, unexpected '$fileName' (T_VARIABLE), expecting ')' in /home/tupm4k9nwuip/public_html/Saaty/production/core/enviar.php on line 72
+[01-Jul-2020 12:52:03 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn.php on line 73
+[01-Jul-2020 12:57:34 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn.php on line 73
+[01-Jul-2020 13:45:29 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn2.php on line 73
+[01-Jul-2020 13:45:46 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn2.php on line 73
+[01-Jul-2020 14:04:02 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn.php on line 73
+[01-Jul-2020 14:09:22 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn2.php on line 73
+[01-Jul-2020 14:11:44 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn.php on line 73
+[01-Jul-2020 14:14:29 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn2.php on line 73
+[29-Jul-2020 22:13:36 UTC] PHP Warning:  Use of undefined constant auth - assumed 'auth' (this will throw an Error in a future version of PHP) in /home/tupm4k9nwuip/public_html/Saaty/production/core/loginIn.php on line 73

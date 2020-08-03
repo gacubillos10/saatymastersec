@@ -1,0 +1,5 @@
+1,Gustavo Cubillos,3,1,1,Actividad 2 Elvira.pdf-2020-07-01-12-07-33.txt,Actividad 2 Elvira.pdf,2020-07-01-12-07-33,Crear,19ac8ef7a6302b6cb6402a6d6c33a90f
+1,Gustavo Cubillos,3,1,1,Filtro1.json-2020-07-01-12-07-55.txt,Filtro1.json,2020-07-01-12-07-55,Crear,b88bf0326cef36dba6ca45a8c936b3d2
+1,Gustavo Cubillos,3,1,0,MANUAL Sitios de interés.pptx-2020-07-01-02-07-41.txt,MANUAL Sitios de interés.pptx,2020-07-01-02-07-41,Crear,06b9221e7c9e46559870d6ef9dfed611
+1,Gustavo Cubillos,3,1,1,FamiliasTarifarias.json-2020-07-01-02-07-17.txt,FamiliasTarifarias.json,2020-07-01-02-07-17,Crear,75c2602f780b807ee1c6bc29a00c3aa4
+1,Gustavo Cubillos,1,1,1,KIU_AirBookRQ_RS.pdf-2020-07-01-02-07-48.txt,KIU_AirBookRQ_RS.pdf,2020-07-01-02-07-48,Crear,59f5f2cdd8afbb98a6eac8117001251e
