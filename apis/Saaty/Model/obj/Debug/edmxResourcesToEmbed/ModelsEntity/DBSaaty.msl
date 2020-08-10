@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SaatyModelStoreContainer" CdmEntityContainer="SaatyEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="SaatyModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Algoritmos_Cifrado">
+      <EntityTypeMapping TypeName="SaatyModel.Algoritmos_Cifrado">
+        <MappingFragment StoreEntitySet="Algoritmos_Cifrado">
+          <ScalarProperty Name="Id_Algoritmo" ColumnName="Id_Algoritmo" />
+          <ScalarProperty Name="Algoritmo" ColumnName="Algoritmo" />
+          <ScalarProperty Name="KeyUrl" ColumnName="KeyUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="SaatyModel.AspNetRoles">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="SaatyModel.AspNetUserClaims">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="SaatyModel.AspNetUserLogins">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="SaatyModel.AspNetUsers">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documentos">
+      <EntityTypeMapping TypeName="SaatyModel.Documentos">
+        <MappingFragment StoreEntitySet="Documentos">
+          <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+          <ScalarProperty Name="Id_NivelPrivacidad" ColumnName="Id_NivelPrivacidad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Numero_Segmentos" ColumnName="Numero_Segmentos" />
+          <ScalarProperty Name="HashDocumento" ColumnName="HashDocumento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documentos_Usuarios">
+      <EntityTypeMapping TypeName="SaatyModel.Documentos_Usuarios">
+        <MappingFragment StoreEntitySet="Documentos_Usuarios">
+          <ScalarProperty Name="Id_Permisos" ColumnName="Id_Permisos" />
+          <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+          <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nivel_Privacidad">
+      <EntityTypeMapping TypeName="SaatyModel.Nivel_Privacidad">
+        <MappingFragment StoreEntitySet="Nivel_Privacidad">
+          <ScalarProperty Name="Id_NivelPrivacidad" ColumnName="Id_NivelPrivacidad" />
+          <ScalarProperty Name="Id_Algoritmo" ColumnName="Id_Algoritmo" />
+          <ScalarProperty Name="NivelPrivacidad" ColumnName="NivelPrivacidad" />
+          <ScalarProperty Name="DescripcionPrivacidad" ColumnName="DescripcionPrivacidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Segmentacion">
+      <EntityTypeMapping TypeName="SaatyModel.Segmentacion">
+        <MappingFragment StoreEntitySet="Segmentacion">
+          <ScalarProperty Name="Id_Segmentacion" ColumnName="Id_Segmentacion" />
+          <ScalarProperty Name="Id_Storage" ColumnName="Id_Storage" />
+          <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+          <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+          <ScalarProperty Name="UrlSegmento" ColumnName="UrlSegmento" />
+          <ScalarProperty Name="HashSegmento" ColumnName="HashSegmento" />
+          <ScalarProperty Name="HashAnt" ColumnName="HashAnt" />
+          <ScalarProperty Name="HashPos" ColumnName="HashPos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Storage">
+      <EntityTypeMapping TypeName="SaatyModel.Storage">
+        <MappingFragment StoreEntitySet="Storage">
+          <ScalarProperty Name="Id_Storage" ColumnName="Id_Storage" />
+          <ScalarProperty Name="NombreStorage" ColumnName="NombreStorage" />
+          <ScalarProperty Name="UrlStorage" ColumnName="UrlStorage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="SaatyModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="crud___MigrationHistoryDelete" FunctionName="SaatyModel.Store.crud___MigrationHistoryDelete" />
+    <FunctionImportMapping FunctionImportName="crud___MigrationHistoryInsert" FunctionName="SaatyModel.Store.crud___MigrationHistoryInsert">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud___MigrationHistoryInsert_Result">
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud___MigrationHistorySelect" FunctionName="SaatyModel.Store.crud___MigrationHistorySelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud___MigrationHistorySelect_Result">
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud___MigrationHistoryUpdate" FunctionName="SaatyModel.Store.crud___MigrationHistoryUpdate" />
+    <FunctionImportMapping FunctionImportName="crud_Algoritmos_CifradoDelete" FunctionName="SaatyModel.Store.crud_Algoritmos_CifradoDelete" />
+    <FunctionImportMapping FunctionImportName="crud_Algoritmos_CifradoInsert" FunctionName="SaatyModel.Store.crud_Algoritmos_CifradoInsert">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_Algoritmos_CifradoInsert_Result">
+          <ScalarProperty Name="Id_Algoritmo" ColumnName="Id_Algoritmo" />
+          <ScalarProperty Name="Algoritmo" ColumnName="Algoritmo" />
+          <ScalarProperty Name="KeyUrl" ColumnName="KeyUrl" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_Algoritmos_CifradoSelect" FunctionName="SaatyModel.Store.crud_Algoritmos_CifradoSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_Algoritmos_CifradoSelect_Result">
+          <ScalarProperty Name="Id_Algoritmo" ColumnName="Id_Algoritmo" />
+          <ScalarProperty Name="Algoritmo" ColumnName="Algoritmo" />
+          <ScalarProperty Name="KeyUrl" ColumnName="KeyUrl" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_Algoritmos_CifradoUpdate" FunctionName="SaatyModel.Store.crud_Algoritmos_CifradoUpdate" />
+    <FunctionImportMapping FunctionImportName="crud_AspNetRolesDelete" FunctionName="SaatyModel.Store.crud_AspNetRolesDelete" />
+    <FunctionImportMapping FunctionImportName="crud_AspNetRolesInsert" FunctionName="SaatyModel.Store.crud_AspNetRolesInsert">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_AspNetRolesInsert_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_AspNetRolesSelect" FunctionName="SaatyModel.Store.crud_AspNetRolesSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_AspNetRolesSelect_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_AspNetRolesUpdate" FunctionName="SaatyModel.Store.crud_AspNetRolesUpdate" />
+    <FunctionImportMapping FunctionImportName="crud_AspNetUserClaimsDelete" FunctionName="SaatyModel.Store.crud_AspNetUserClaimsDelete" />
+    <FunctionImportMapping FunctionImportName="crud_AspNetUserClaimsInsert" FunctionName="SaatyModel.Store.crud_AspNetUserClaimsInsert">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_AspNetUserClaimsInsert_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_AspNetUserClaimsSelect" FunctionName="SaatyModel.Store.crud_AspNetUserClaimsSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_AspNetUserClaimsSelect_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_AspNetUserClaimsUpdate" FunctionName="SaatyModel.Store.crud_AspNetUserClaimsUpdate" />
+    <FunctionImportMapping FunctionImportName="crud_AspNetUserLoginsDelete" FunctionName="SaatyModel.Store.crud_AspNetUserLoginsDelete" />
+    <FunctionImportMapping FunctionImportName="crud_AspNetUserLoginsSelect" FunctionName="SaatyModel.Store.crud_AspNetUserLoginsSelect" />
+    <FunctionImportMapping FunctionImportName="crud_AspNetUserRolesDelete" FunctionName="SaatyModel.Store.crud_AspNetUserRolesDelete" />
+    <FunctionImportMapping FunctionImportName="crud_AspNetUserRolesSelect" FunctionName="SaatyModel.Store.crud_AspNetUserRolesSelect" />
+    <FunctionImportMapping FunctionImportName="crud_AspNetUsersDelete" FunctionName="SaatyModel.Store.crud_AspNetUsersDelete" />
+    <FunctionImportMapping FunctionImportName="crud_AspNetUsersInsert" FunctionName="SaatyModel.Store.crud_AspNetUsersInsert">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_AspNetUsersInsert_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_AspNetUsersSelect" FunctionName="SaatyModel.Store.crud_AspNetUsersSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_AspNetUsersSelect_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_AspNetUsersUpdate" FunctionName="SaatyModel.Store.crud_AspNetUsersUpdate" />
+    <FunctionImportMapping FunctionImportName="crud_Documentos_UsuariosDelete" FunctionName="SaatyModel.Store.crud_Documentos_UsuariosDelete" />
+    <FunctionImportMapping FunctionImportName="crud_Documentos_UsuariosInsert" FunctionName="SaatyModel.Store.crud_Documentos_UsuariosInsert">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_Documentos_UsuariosInsert_Result">
+          <ScalarProperty Name="Id_Permisos" ColumnName="Id_Permisos" />
+          <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+          <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_Documentos_UsuariosSelect" FunctionName="SaatyModel.Store.crud_Documentos_UsuariosSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_Documentos_UsuariosSelect_Result">
+          <ScalarProperty Name="Id_Permisos" ColumnName="Id_Permisos" />
+          <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+          <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_Documentos_UsuariosUpdate" FunctionName="SaatyModel.Store.crud_Documentos_UsuariosUpdate" />
+    <FunctionImportMapping FunctionImportName="crud_DocumentosDelete" FunctionName="SaatyModel.Store.crud_DocumentosDelete" />
+    <FunctionImportMapping FunctionImportName="crud_DocumentosInsert" FunctionName="SaatyModel.Store.crud_DocumentosInsert">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_DocumentosInsert_Result">
+          <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+          <ScalarProperty Name="Id_NivelPrivacidad" ColumnName="Id_NivelPrivacidad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Numero_Segmentos" ColumnName="Numero_Segmentos" />
+          <ScalarProperty Name="HashDocumento" ColumnName="HashDocumento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_DocumentosSelect" FunctionName="SaatyModel.Store.crud_DocumentosSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_DocumentosSelect_Result">
+          <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+          <ScalarProperty Name="Id_NivelPrivacidad" ColumnName="Id_NivelPrivacidad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Numero_Segmentos" ColumnName="Numero_Segmentos" />
+          <ScalarProperty Name="HashDocumento" ColumnName="HashDocumento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_DocumentosUpdate" FunctionName="SaatyModel.Store.crud_DocumentosUpdate" />
+    <FunctionImportMapping FunctionImportName="crud_Nivel_PrivacidadDelete" FunctionName="SaatyModel.Store.crud_Nivel_PrivacidadDelete" />
+    <FunctionImportMapping FunctionImportName="crud_Nivel_PrivacidadInsert" FunctionName="SaatyModel.Store.crud_Nivel_PrivacidadInsert">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_Nivel_PrivacidadInsert_Result">
+          <ScalarProperty Name="Id_NivelPrivacidad" ColumnName="Id_NivelPrivacidad" />
+          <ScalarProperty Name="Id_Algoritmo" ColumnName="Id_Algoritmo" />
+          <ScalarProperty Name="NivelPrivacidad" ColumnName="NivelPrivacidad" />
+          <ScalarProperty Name="DescripcionPrivacidad" ColumnName="DescripcionPrivacidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_Nivel_PrivacidadSelect" FunctionName="SaatyModel.Store.crud_Nivel_PrivacidadSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_Nivel_PrivacidadSelect_Result">
+          <ScalarProperty Name="Id_NivelPrivacidad" ColumnName="Id_NivelPrivacidad" />
+          <ScalarProperty Name="Id_Algoritmo" ColumnName="Id_Algoritmo" />
+          <ScalarProperty Name="NivelPrivacidad" ColumnName="NivelPrivacidad" />
+          <ScalarProperty Name="DescripcionPrivacidad" ColumnName="DescripcionPrivacidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_Nivel_PrivacidadUpdate" FunctionName="SaatyModel.Store.crud_Nivel_PrivacidadUpdate" />
+    <FunctionImportMapping FunctionImportName="crud_SegmentacionDelete" FunctionName="SaatyModel.Store.crud_SegmentacionDelete" />
+    <FunctionImportMapping FunctionImportName="crud_SegmentacionInsert" FunctionName="SaatyModel.Store.crud_SegmentacionInsert">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_SegmentacionInsert_Result">
+          <ScalarProperty Name="Id_Segmentacion" ColumnName="Id_Segmentacion" />
+          <ScalarProperty Name="Id_Storage" ColumnName="Id_Storage" />
+          <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+          <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+          <ScalarProperty Name="UrlSegmento" ColumnName="UrlSegmento" />
+          <ScalarProperty Name="HashSegmento" ColumnName="HashSegmento" />
+          <ScalarProperty Name="HashAnt" ColumnName="HashAnt" />
+          <ScalarProperty Name="HashPos" ColumnName="HashPos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_SegmentacionSelect" FunctionName="SaatyModel.Store.crud_SegmentacionSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_SegmentacionSelect_Result">
+          <ScalarProperty Name="Id_Segmentacion" ColumnName="Id_Segmentacion" />
+          <ScalarProperty Name="Id_Storage" ColumnName="Id_Storage" />
+          <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+          <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+          <ScalarProperty Name="UrlSegmento" ColumnName="UrlSegmento" />
+          <ScalarProperty Name="HashSegmento" ColumnName="HashSegmento" />
+          <ScalarProperty Name="HashAnt" ColumnName="HashAnt" />
+          <ScalarProperty Name="HashPos" ColumnName="HashPos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_SegmentacionUpdate" FunctionName="SaatyModel.Store.crud_SegmentacionUpdate" />
+    <FunctionImportMapping FunctionImportName="crud_StorageDelete" FunctionName="SaatyModel.Store.crud_StorageDelete" />
+    <FunctionImportMapping FunctionImportName="crud_StorageInsert" FunctionName="SaatyModel.Store.crud_StorageInsert">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_StorageInsert_Result">
+          <ScalarProperty Name="Id_Storage" ColumnName="Id_Storage" />
+          <ScalarProperty Name="NombreStorage" ColumnName="NombreStorage" />
+          <ScalarProperty Name="UrlStorage" ColumnName="UrlStorage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_StorageSelect" FunctionName="SaatyModel.Store.crud_StorageSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SaatyModel.crud_StorageSelect_Result">
+          <ScalarProperty Name="Id_Storage" ColumnName="Id_Storage" />
+          <ScalarProperty Name="NombreStorage" ColumnName="NombreStorage" />
+          <ScalarProperty Name="UrlStorage" ColumnName="UrlStorage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crud_StorageUpdate" FunctionName="SaatyModel.Store.crud_StorageUpdate" />
+  </EntityContainerMapping>
+</Mapping>

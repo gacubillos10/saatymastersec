@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="45be8a96b8054a9a9dab28242b09e60e" Name="Diagram1">
+        <EntityTypeShape EntityType="SaatyModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaatyModel.Algoritmos_Cifrado" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaatyModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaatyModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaatyModel.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaatyModel.AspNetUsers" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaatyModel.Documentos" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaatyModel.Documentos_Usuarios" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaatyModel.Nivel_Privacidad" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaatyModel.Segmentacion" Width="1.5" PointX="10.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaatyModel.Storage" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="SaatyModel.FK__Nivel_Pri__Id_Al__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="SaatyModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="SaatyModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="SaatyModel.FK__Documento__Id_Do__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="SaatyModel.FK__Documento__Id_Ni__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="SaatyModel.FK__Segmentac__Id_Do__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="SaatyModel.FK__Segmentac__Id_St__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="SaatyModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

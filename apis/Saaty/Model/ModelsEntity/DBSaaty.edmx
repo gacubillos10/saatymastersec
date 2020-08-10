@@ -1,0 +1,1509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SaatyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Algoritmos_Cifrado">
+          <Key>
+            <PropertyRef Name="Id_Algoritmo" />
+          </Key>
+          <Property Name="Id_Algoritmo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Algoritmo" Type="varchar(max)" />
+          <Property Name="KeyUrl" Type="text" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" />
+          <Property Name="Apellido" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Documentos">
+          <Key>
+            <PropertyRef Name="Id_Documento" />
+          </Key>
+          <Property Name="Id_Documento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_NivelPrivacidad" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar(max)" />
+          <Property Name="Numero_Segmentos" Type="int" />
+          <Property Name="HashDocumento" Type="text" />
+        </EntityType>
+        <EntityType Name="Documentos_Usuarios">
+          <Key>
+            <PropertyRef Name="Id_Permisos" />
+          </Key>
+          <Property Name="Id_Permisos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Documento" Type="int" Nullable="false" />
+          <Property Name="Id_user" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="Nivel_Privacidad">
+          <Key>
+            <PropertyRef Name="Id_NivelPrivacidad" />
+          </Key>
+          <Property Name="Id_NivelPrivacidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Algoritmo" Type="int" Nullable="false" />
+          <Property Name="NivelPrivacidad" Type="varchar(max)" />
+          <Property Name="DescripcionPrivacidad" Type="text" />
+        </EntityType>
+        <EntityType Name="Segmentacion">
+          <Key>
+            <PropertyRef Name="Id_Segmentacion" />
+          </Key>
+          <Property Name="Id_Segmentacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Storage" Type="int" Nullable="false" />
+          <Property Name="Id_Documento" Type="int" Nullable="false" />
+          <Property Name="Posicion" Type="int" />
+          <Property Name="UrlSegmento" Type="text" />
+          <Property Name="HashSegmento" Type="text" />
+          <Property Name="HashAnt" Type="text" />
+          <Property Name="HashPos" Type="text" />
+        </EntityType>
+        <EntityType Name="Storage">
+          <Key>
+            <PropertyRef Name="Id_Storage" />
+          </Key>
+          <Property Name="Id_Storage" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreStorage" Type="varchar(max)" />
+          <Property Name="UrlStorage" Type="text" />
+        </EntityType>
+        <Association Name="FK__Documento__Id_Do__5165187F">
+          <End Role="Documentos" Type="Self.Documentos" Multiplicity="1" />
+          <End Role="Documentos_Usuarios" Type="Self.Documentos_Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documentos">
+              <PropertyRef Name="Id_Documento" />
+            </Principal>
+            <Dependent Role="Documentos_Usuarios">
+              <PropertyRef Name="Id_Documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documento__Id_Ni__534D60F1">
+          <End Role="Nivel_Privacidad" Type="Self.Nivel_Privacidad" Multiplicity="1" />
+          <End Role="Documentos" Type="Self.Documentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nivel_Privacidad">
+              <PropertyRef Name="Id_NivelPrivacidad" />
+            </Principal>
+            <Dependent Role="Documentos">
+              <PropertyRef Name="Id_NivelPrivacidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Nivel_Pri__Id_Al__5070F446">
+          <End Role="Algoritmos_Cifrado" Type="Self.Algoritmos_Cifrado" Multiplicity="1" />
+          <End Role="Nivel_Privacidad" Type="Self.Nivel_Privacidad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Algoritmos_Cifrado">
+              <PropertyRef Name="Id_Algoritmo" />
+            </Principal>
+            <Dependent Role="Nivel_Privacidad">
+              <PropertyRef Name="Id_Algoritmo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Segmentac__Id_Do__52593CB8">
+          <End Role="Documentos" Type="Self.Documentos" Multiplicity="1" />
+          <End Role="Segmentacion" Type="Self.Segmentacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documentos">
+              <PropertyRef Name="Id_Documento" />
+            </Principal>
+            <Dependent Role="Segmentacion">
+              <PropertyRef Name="Id_Documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Segmentac__Id_St__5441852A">
+          <End Role="Storage" Type="Self.Storage" Multiplicity="1" />
+          <End Role="Segmentacion" Type="Self.Segmentacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Storage">
+              <PropertyRef Name="Id_Storage" />
+            </Principal>
+            <Dependent Role="Segmentacion">
+              <PropertyRef Name="Id_Storage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="crud___MigrationHistoryDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ContextKey" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="crud___MigrationHistoryInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Model" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="ProductVersion" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="crud___MigrationHistorySelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ContextKey" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="crud___MigrationHistoryUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ContextKey" Type="nvarchar" Mode="In" />
+          <Parameter Name="Model" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="ProductVersion" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="crud_Algoritmos_CifradoDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Algoritmo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="crud_Algoritmos_CifradoInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Algoritmo" Type="varchar(max)" Mode="In" />
+          <Parameter Name="KeyUrl" Type="text" Mode="In" />
+        </Function>
+        <Function Name="crud_Algoritmos_CifradoSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Algoritmo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="crud_Algoritmos_CifradoUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Algoritmo" Type="int" Mode="In" />
+          <Parameter Name="Algoritmo" Type="varchar(max)" Mode="In" />
+          <Parameter Name="KeyUrl" Type="text" Mode="In" />
+        </Function>
+        <Function Name="crud_AspNetRolesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="crud_AspNetRolesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="crud_AspNetRolesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="crud_AspNetRolesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="nvarchar" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="crud_AspNetUserClaimsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="crud_AspNetUserClaimsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+          <Parameter Name="ClaimType" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ClaimValue" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="crud_AspNetUserClaimsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="crud_AspNetUserClaimsUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+          <Parameter Name="ClaimType" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ClaimValue" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="crud_AspNetUserLoginsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="crud_AspNetUserLoginsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="crud_AspNetUserRolesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RoleId" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="crud_AspNetUserRolesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RoleId" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="crud_AspNetUsersDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="crud_AspNetUsersInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="EmailConfirmed" Type="bit" Mode="In" />
+          <Parameter Name="PasswordHash" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="SecurityStamp" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="PhoneNumber" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="PhoneNumberConfirmed" Type="bit" Mode="In" />
+          <Parameter Name="TwoFactorEnabled" Type="bit" Mode="In" />
+          <Parameter Name="LockoutEndDateUtc" Type="datetime" Mode="In" />
+          <Parameter Name="LockoutEnabled" Type="bit" Mode="In" />
+          <Parameter Name="AccessFailedCount" Type="int" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Discriminator" Type="nvarchar" Mode="In" />
+          <Parameter Name="Nombre" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Apellido" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="crud_AspNetUsersSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="crud_AspNetUsersUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="EmailConfirmed" Type="bit" Mode="In" />
+          <Parameter Name="PasswordHash" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="SecurityStamp" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="PhoneNumber" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="PhoneNumberConfirmed" Type="bit" Mode="In" />
+          <Parameter Name="TwoFactorEnabled" Type="bit" Mode="In" />
+          <Parameter Name="LockoutEndDateUtc" Type="datetime" Mode="In" />
+          <Parameter Name="LockoutEnabled" Type="bit" Mode="In" />
+          <Parameter Name="AccessFailedCount" Type="int" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Discriminator" Type="nvarchar" Mode="In" />
+          <Parameter Name="Nombre" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Apellido" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="crud_Documentos_UsuariosDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Permisos" Type="int" Mode="In" />
+        </Function>
+        <Function Name="crud_Documentos_UsuariosInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Documento" Type="int" Mode="In" />
+          <Parameter Name="Id_user" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="crud_Documentos_UsuariosSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Permisos" Type="int" Mode="In" />
+        </Function>
+        <Function Name="crud_Documentos_UsuariosUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Permisos" Type="int" Mode="In" />
+          <Parameter Name="Id_Documento" Type="int" Mode="In" />
+          <Parameter Name="Id_user" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="crud_DocumentosDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Documento" Type="int" Mode="In" />
+        </Function>
+        <Function Name="crud_DocumentosInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_NivelPrivacidad" Type="int" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Numero_Segmentos" Type="int" Mode="In" />
+          <Parameter Name="HashDocumento" Type="text" Mode="In" />
+        </Function>
+        <Function Name="crud_DocumentosSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Documento" Type="int" Mode="In" />
+        </Function>
+        <Function Name="crud_DocumentosUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Documento" Type="int" Mode="In" />
+          <Parameter Name="Id_NivelPrivacidad" Type="int" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Numero_Segmentos" Type="int" Mode="In" />
+          <Parameter Name="HashDocumento" Type="text" Mode="In" />
+        </Function>
+        <Function Name="crud_Nivel_PrivacidadDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_NivelPrivacidad" Type="int" Mode="In" />
+        </Function>
+        <Function Name="crud_Nivel_PrivacidadInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Algoritmo" Type="int" Mode="In" />
+          <Parameter Name="NivelPrivacidad" Type="varchar(max)" Mode="In" />
+          <Parameter Name="DescripcionPrivacidad" Type="text" Mode="In" />
+        </Function>
+        <Function Name="crud_Nivel_PrivacidadSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_NivelPrivacidad" Type="int" Mode="In" />
+        </Function>
+        <Function Name="crud_Nivel_PrivacidadUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_NivelPrivacidad" Type="int" Mode="In" />
+          <Parameter Name="Id_Algoritmo" Type="int" Mode="In" />
+          <Parameter Name="NivelPrivacidad" Type="varchar(max)" Mode="In" />
+          <Parameter Name="DescripcionPrivacidad" Type="text" Mode="In" />
+        </Function>
+        <Function Name="crud_SegmentacionDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Segmentacion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="crud_SegmentacionInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Storage" Type="int" Mode="In" />
+          <Parameter Name="Id_Documento" Type="int" Mode="In" />
+          <Parameter Name="Posicion" Type="int" Mode="In" />
+          <Parameter Name="UrlSegmento" Type="text" Mode="In" />
+          <Parameter Name="HashSegmento" Type="text" Mode="In" />
+          <Parameter Name="HashAnt" Type="text" Mode="In" />
+          <Parameter Name="HashPos" Type="text" Mode="In" />
+        </Function>
+        <Function Name="crud_SegmentacionSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Segmentacion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="crud_SegmentacionUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Segmentacion" Type="int" Mode="In" />
+          <Parameter Name="Id_Storage" Type="int" Mode="In" />
+          <Parameter Name="Id_Documento" Type="int" Mode="In" />
+          <Parameter Name="Posicion" Type="int" Mode="In" />
+          <Parameter Name="UrlSegmento" Type="text" Mode="In" />
+          <Parameter Name="HashSegmento" Type="text" Mode="In" />
+          <Parameter Name="HashAnt" Type="text" Mode="In" />
+          <Parameter Name="HashPos" Type="text" Mode="In" />
+        </Function>
+        <Function Name="crud_StorageDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Storage" Type="int" Mode="In" />
+        </Function>
+        <Function Name="crud_StorageInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NombreStorage" Type="varchar(max)" Mode="In" />
+          <Parameter Name="UrlStorage" Type="text" Mode="In" />
+        </Function>
+        <Function Name="crud_StorageSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Storage" Type="int" Mode="In" />
+        </Function>
+        <Function Name="crud_StorageUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Storage" Type="int" Mode="In" />
+          <Parameter Name="NombreStorage" Type="varchar(max)" Mode="In" />
+          <Parameter Name="UrlStorage" Type="text" Mode="In" />
+        </Function>
+        <EntityContainer Name="SaatyModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Algoritmos_Cifrado" EntityType="Self.Algoritmos_Cifrado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Documentos" EntityType="Self.Documentos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Documentos_Usuarios" EntityType="Self.Documentos_Usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nivel_Privacidad" EntityType="Self.Nivel_Privacidad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Segmentacion" EntityType="Self.Segmentacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Storage" EntityType="Self.Storage" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Documento__Id_Do__5165187F" Association="Self.FK__Documento__Id_Do__5165187F">
+            <End Role="Documentos" EntitySet="Documentos" />
+            <End Role="Documentos_Usuarios" EntitySet="Documentos_Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documento__Id_Ni__534D60F1" Association="Self.FK__Documento__Id_Ni__534D60F1">
+            <End Role="Nivel_Privacidad" EntitySet="Nivel_Privacidad" />
+            <End Role="Documentos" EntitySet="Documentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Nivel_Pri__Id_Al__5070F446" Association="Self.FK__Nivel_Pri__Id_Al__5070F446">
+            <End Role="Algoritmos_Cifrado" EntitySet="Algoritmos_Cifrado" />
+            <End Role="Nivel_Privacidad" EntitySet="Nivel_Privacidad" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Segmentac__Id_Do__52593CB8" Association="Self.FK__Segmentac__Id_Do__52593CB8">
+            <End Role="Documentos" EntitySet="Documentos" />
+            <End Role="Segmentacion" EntitySet="Segmentacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Segmentac__Id_St__5441852A" Association="Self.FK__Segmentac__Id_St__5441852A">
+            <End Role="Storage" EntitySet="Storage" />
+            <End Role="Segmentacion" EntitySet="Segmentacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SaatyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Algoritmos_Cifrado">
+          <Key>
+            <PropertyRef Name="Id_Algoritmo" />
+          </Key>
+          <Property Name="Id_Algoritmo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Algoritmo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="KeyUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Nivel_Privacidad" Relationship="Self.FK__Nivel_Pri__Id_Al__5070F446" FromRole="Algoritmos_Cifrado" ToRole="Nivel_Privacidad" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Discriminator" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="Documentos">
+          <Key>
+            <PropertyRef Name="Id_Documento" />
+          </Key>
+          <Property Name="Id_Documento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_NivelPrivacidad" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Numero_Segmentos" Type="Int32" />
+          <Property Name="HashDocumento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Documentos_Usuarios" Relationship="Self.FK__Documento__Id_Do__5165187F" FromRole="Documentos" ToRole="Documentos_Usuarios" />
+          <NavigationProperty Name="Nivel_Privacidad" Relationship="Self.FK__Documento__Id_Ni__534D60F1" FromRole="Documentos" ToRole="Nivel_Privacidad" />
+          <NavigationProperty Name="Segmentacion" Relationship="Self.FK__Segmentac__Id_Do__52593CB8" FromRole="Documentos" ToRole="Segmentacion" />
+        </EntityType>
+        <EntityType Name="Documentos_Usuarios">
+          <Key>
+            <PropertyRef Name="Id_Permisos" />
+          </Key>
+          <Property Name="Id_Permisos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Documento" Type="Int32" Nullable="false" />
+          <Property Name="Id_user" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Documentos" Relationship="Self.FK__Documento__Id_Do__5165187F" FromRole="Documentos_Usuarios" ToRole="Documentos" />
+        </EntityType>
+        <EntityType Name="Nivel_Privacidad">
+          <Key>
+            <PropertyRef Name="Id_NivelPrivacidad" />
+          </Key>
+          <Property Name="Id_NivelPrivacidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Algoritmo" Type="Int32" Nullable="false" />
+          <Property Name="NivelPrivacidad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DescripcionPrivacidad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Algoritmos_Cifrado" Relationship="Self.FK__Nivel_Pri__Id_Al__5070F446" FromRole="Nivel_Privacidad" ToRole="Algoritmos_Cifrado" />
+          <NavigationProperty Name="Documentos" Relationship="Self.FK__Documento__Id_Ni__534D60F1" FromRole="Nivel_Privacidad" ToRole="Documentos" />
+        </EntityType>
+        <EntityType Name="Segmentacion">
+          <Key>
+            <PropertyRef Name="Id_Segmentacion" />
+          </Key>
+          <Property Name="Id_Segmentacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Storage" Type="Int32" Nullable="false" />
+          <Property Name="Id_Documento" Type="Int32" Nullable="false" />
+          <Property Name="Posicion" Type="Int32" />
+          <Property Name="UrlSegmento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HashSegmento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HashAnt" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HashPos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Documentos" Relationship="Self.FK__Segmentac__Id_Do__52593CB8" FromRole="Segmentacion" ToRole="Documentos" />
+          <NavigationProperty Name="Storage" Relationship="Self.FK__Segmentac__Id_St__5441852A" FromRole="Segmentacion" ToRole="Storage" />
+        </EntityType>
+        <EntityType Name="Storage">
+          <Key>
+            <PropertyRef Name="Id_Storage" />
+          </Key>
+          <Property Name="Id_Storage" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreStorage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UrlStorage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Segmentacion" Relationship="Self.FK__Segmentac__Id_St__5441852A" FromRole="Storage" ToRole="Segmentacion" />
+        </EntityType>
+        <Association Name="FK__Nivel_Pri__Id_Al__5070F446">
+          <End Role="Algoritmos_Cifrado" Type="Self.Algoritmos_Cifrado" Multiplicity="1" />
+          <End Role="Nivel_Privacidad" Type="Self.Nivel_Privacidad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Algoritmos_Cifrado">
+              <PropertyRef Name="Id_Algoritmo" />
+            </Principal>
+            <Dependent Role="Nivel_Privacidad">
+              <PropertyRef Name="Id_Algoritmo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documento__Id_Do__5165187F">
+          <End Role="Documentos" Type="Self.Documentos" Multiplicity="1" />
+          <End Role="Documentos_Usuarios" Type="Self.Documentos_Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documentos">
+              <PropertyRef Name="Id_Documento" />
+            </Principal>
+            <Dependent Role="Documentos_Usuarios">
+              <PropertyRef Name="Id_Documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documento__Id_Ni__534D60F1">
+          <End Role="Nivel_Privacidad" Type="Self.Nivel_Privacidad" Multiplicity="1" />
+          <End Role="Documentos" Type="Self.Documentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nivel_Privacidad">
+              <PropertyRef Name="Id_NivelPrivacidad" />
+            </Principal>
+            <Dependent Role="Documentos">
+              <PropertyRef Name="Id_NivelPrivacidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Segmentac__Id_Do__52593CB8">
+          <End Role="Documentos" Type="Self.Documentos" Multiplicity="1" />
+          <End Role="Segmentacion" Type="Self.Segmentacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documentos">
+              <PropertyRef Name="Id_Documento" />
+            </Principal>
+            <Dependent Role="Segmentacion">
+              <PropertyRef Name="Id_Documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Segmentac__Id_St__5441852A">
+          <End Role="Storage" Type="Self.Storage" Multiplicity="1" />
+          <End Role="Segmentacion" Type="Self.Segmentacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Storage">
+              <PropertyRef Name="Id_Storage" />
+            </Principal>
+            <Dependent Role="Segmentacion">
+              <PropertyRef Name="Id_Storage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="SaatyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="Algoritmos_Cifrado" EntityType="Self.Algoritmos_Cifrado" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+          <EntitySet Name="Documentos" EntityType="Self.Documentos" />
+          <EntitySet Name="Documentos_Usuarios" EntityType="Self.Documentos_Usuarios" />
+          <EntitySet Name="Nivel_Privacidad" EntityType="Self.Nivel_Privacidad" />
+          <EntitySet Name="Segmentacion" EntityType="Self.Segmentacion" />
+          <EntitySet Name="Storage" EntityType="Self.Storage" />
+          <AssociationSet Name="FK__Nivel_Pri__Id_Al__5070F446" Association="Self.FK__Nivel_Pri__Id_Al__5070F446">
+            <End Role="Algoritmos_Cifrado" EntitySet="Algoritmos_Cifrado" />
+            <End Role="Nivel_Privacidad" EntitySet="Nivel_Privacidad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documento__Id_Do__5165187F" Association="Self.FK__Documento__Id_Do__5165187F">
+            <End Role="Documentos" EntitySet="Documentos" />
+            <End Role="Documentos_Usuarios" EntitySet="Documentos_Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documento__Id_Ni__534D60F1" Association="Self.FK__Documento__Id_Ni__534D60F1">
+            <End Role="Nivel_Privacidad" EntitySet="Nivel_Privacidad" />
+            <End Role="Documentos" EntitySet="Documentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Segmentac__Id_Do__52593CB8" Association="Self.FK__Segmentac__Id_Do__52593CB8">
+            <End Role="Documentos" EntitySet="Documentos" />
+            <End Role="Segmentacion" EntitySet="Segmentacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Segmentac__Id_St__5441852A" Association="Self.FK__Segmentac__Id_St__5441852A">
+            <End Role="Storage" EntitySet="Storage" />
+            <End Role="Segmentacion" EntitySet="Segmentacion" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <FunctionImport Name="crud___MigrationHistoryDelete">
+            <Parameter Name="ContextKey" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud___MigrationHistoryInsert" ReturnType="Collection(SaatyModel.crud___MigrationHistoryInsert_Result)">
+            <Parameter Name="Model" Mode="In" Type="Binary" />
+            <Parameter Name="ProductVersion" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud___MigrationHistorySelect" ReturnType="Collection(SaatyModel.crud___MigrationHistorySelect_Result)">
+            <Parameter Name="ContextKey" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud___MigrationHistoryUpdate">
+            <Parameter Name="ContextKey" Mode="In" Type="String" />
+            <Parameter Name="Model" Mode="In" Type="Binary" />
+            <Parameter Name="ProductVersion" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_Algoritmos_CifradoDelete">
+            <Parameter Name="Id_Algoritmo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="crud_Algoritmos_CifradoInsert" ReturnType="Collection(SaatyModel.crud_Algoritmos_CifradoInsert_Result)">
+            <Parameter Name="Algoritmo" Mode="In" Type="String" />
+            <Parameter Name="KeyUrl" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_Algoritmos_CifradoSelect" ReturnType="Collection(SaatyModel.crud_Algoritmos_CifradoSelect_Result)">
+            <Parameter Name="Id_Algoritmo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="crud_Algoritmos_CifradoUpdate">
+            <Parameter Name="Id_Algoritmo" Mode="In" Type="Int32" />
+            <Parameter Name="Algoritmo" Mode="In" Type="String" />
+            <Parameter Name="KeyUrl" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_AspNetRolesDelete">
+            <Parameter Name="Id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_AspNetRolesInsert" ReturnType="Collection(SaatyModel.crud_AspNetRolesInsert_Result)">
+            <Parameter Name="Name" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_AspNetRolesSelect" ReturnType="Collection(SaatyModel.crud_AspNetRolesSelect_Result)">
+            <Parameter Name="Id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_AspNetRolesUpdate">
+            <Parameter Name="Id" Mode="In" Type="String" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_AspNetUserClaimsDelete">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="crud_AspNetUserClaimsInsert" ReturnType="Collection(SaatyModel.crud_AspNetUserClaimsInsert_Result)">
+            <Parameter Name="UserId" Mode="In" Type="String" />
+            <Parameter Name="ClaimType" Mode="In" Type="String" />
+            <Parameter Name="ClaimValue" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_AspNetUserClaimsSelect" ReturnType="Collection(SaatyModel.crud_AspNetUserClaimsSelect_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="crud_AspNetUserClaimsUpdate">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="UserId" Mode="In" Type="String" />
+            <Parameter Name="ClaimType" Mode="In" Type="String" />
+            <Parameter Name="ClaimValue" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_AspNetUserLoginsDelete">
+            <Parameter Name="UserId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_AspNetUserLoginsSelect" ReturnType="Collection(String)">
+            <Parameter Name="UserId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_AspNetUserRolesDelete">
+            <Parameter Name="RoleId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_AspNetUserRolesSelect" ReturnType="Collection(String)">
+            <Parameter Name="RoleId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_AspNetUsersDelete">
+            <Parameter Name="Id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_AspNetUsersInsert" ReturnType="Collection(SaatyModel.crud_AspNetUsersInsert_Result)">
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="EmailConfirmed" Mode="In" Type="Boolean" />
+            <Parameter Name="PasswordHash" Mode="In" Type="String" />
+            <Parameter Name="SecurityStamp" Mode="In" Type="String" />
+            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+            <Parameter Name="PhoneNumberConfirmed" Mode="In" Type="Boolean" />
+            <Parameter Name="TwoFactorEnabled" Mode="In" Type="Boolean" />
+            <Parameter Name="LockoutEndDateUtc" Mode="In" Type="DateTime" />
+            <Parameter Name="LockoutEnabled" Mode="In" Type="Boolean" />
+            <Parameter Name="AccessFailedCount" Mode="In" Type="Int32" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Discriminator" Mode="In" Type="String" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Apellido" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_AspNetUsersSelect" ReturnType="Collection(SaatyModel.crud_AspNetUsersSelect_Result)">
+            <Parameter Name="Id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_AspNetUsersUpdate">
+            <Parameter Name="Id" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="EmailConfirmed" Mode="In" Type="Boolean" />
+            <Parameter Name="PasswordHash" Mode="In" Type="String" />
+            <Parameter Name="SecurityStamp" Mode="In" Type="String" />
+            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+            <Parameter Name="PhoneNumberConfirmed" Mode="In" Type="Boolean" />
+            <Parameter Name="TwoFactorEnabled" Mode="In" Type="Boolean" />
+            <Parameter Name="LockoutEndDateUtc" Mode="In" Type="DateTime" />
+            <Parameter Name="LockoutEnabled" Mode="In" Type="Boolean" />
+            <Parameter Name="AccessFailedCount" Mode="In" Type="Int32" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Discriminator" Mode="In" Type="String" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Apellido" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_Documentos_UsuariosDelete">
+            <Parameter Name="Id_Permisos" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="crud_Documentos_UsuariosInsert" ReturnType="Collection(SaatyModel.crud_Documentos_UsuariosInsert_Result)">
+            <Parameter Name="Id_Documento" Mode="In" Type="Int32" />
+            <Parameter Name="Id_user" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_Documentos_UsuariosSelect" ReturnType="Collection(SaatyModel.crud_Documentos_UsuariosSelect_Result)">
+            <Parameter Name="Id_Permisos" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="crud_Documentos_UsuariosUpdate">
+            <Parameter Name="Id_Permisos" Mode="In" Type="Int32" />
+            <Parameter Name="Id_Documento" Mode="In" Type="Int32" />
+            <Parameter Name="Id_user" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_DocumentosDelete">
+            <Parameter Name="Id_Documento" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="crud_DocumentosInsert" ReturnType="Collection(SaatyModel.crud_DocumentosInsert_Result)">
+            <Parameter Name="Id_NivelPrivacidad" Mode="In" Type="Int32" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Numero_Segmentos" Mode="In" Type="Int32" />
+            <Parameter Name="HashDocumento" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_DocumentosSelect" ReturnType="Collection(SaatyModel.crud_DocumentosSelect_Result)">
+            <Parameter Name="Id_Documento" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="crud_DocumentosUpdate">
+            <Parameter Name="Id_Documento" Mode="In" Type="Int32" />
+            <Parameter Name="Id_NivelPrivacidad" Mode="In" Type="Int32" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Numero_Segmentos" Mode="In" Type="Int32" />
+            <Parameter Name="HashDocumento" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_Nivel_PrivacidadDelete">
+            <Parameter Name="Id_NivelPrivacidad" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="crud_Nivel_PrivacidadInsert" ReturnType="Collection(SaatyModel.crud_Nivel_PrivacidadInsert_Result)">
+            <Parameter Name="Id_Algoritmo" Mode="In" Type="Int32" />
+            <Parameter Name="NivelPrivacidad" Mode="In" Type="String" />
+            <Parameter Name="DescripcionPrivacidad" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_Nivel_PrivacidadSelect" ReturnType="Collection(SaatyModel.crud_Nivel_PrivacidadSelect_Result)">
+            <Parameter Name="Id_NivelPrivacidad" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="crud_Nivel_PrivacidadUpdate">
+            <Parameter Name="Id_NivelPrivacidad" Mode="In" Type="Int32" />
+            <Parameter Name="Id_Algoritmo" Mode="In" Type="Int32" />
+            <Parameter Name="NivelPrivacidad" Mode="In" Type="String" />
+            <Parameter Name="DescripcionPrivacidad" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_SegmentacionDelete">
+            <Parameter Name="Id_Segmentacion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="crud_SegmentacionInsert" ReturnType="Collection(SaatyModel.crud_SegmentacionInsert_Result)">
+            <Parameter Name="Id_Storage" Mode="In" Type="Int32" />
+            <Parameter Name="Id_Documento" Mode="In" Type="Int32" />
+            <Parameter Name="Posicion" Mode="In" Type="Int32" />
+            <Parameter Name="UrlSegmento" Mode="In" Type="String" />
+            <Parameter Name="HashSegmento" Mode="In" Type="String" />
+            <Parameter Name="HashAnt" Mode="In" Type="String" />
+            <Parameter Name="HashPos" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_SegmentacionSelect" ReturnType="Collection(SaatyModel.crud_SegmentacionSelect_Result)">
+            <Parameter Name="Id_Segmentacion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="crud_SegmentacionUpdate">
+            <Parameter Name="Id_Segmentacion" Mode="In" Type="Int32" />
+            <Parameter Name="Id_Storage" Mode="In" Type="Int32" />
+            <Parameter Name="Id_Documento" Mode="In" Type="Int32" />
+            <Parameter Name="Posicion" Mode="In" Type="Int32" />
+            <Parameter Name="UrlSegmento" Mode="In" Type="String" />
+            <Parameter Name="HashSegmento" Mode="In" Type="String" />
+            <Parameter Name="HashAnt" Mode="In" Type="String" />
+            <Parameter Name="HashPos" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_StorageDelete">
+            <Parameter Name="Id_Storage" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="crud_StorageInsert" ReturnType="Collection(SaatyModel.crud_StorageInsert_Result)">
+            <Parameter Name="NombreStorage" Mode="In" Type="String" />
+            <Parameter Name="UrlStorage" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crud_StorageSelect" ReturnType="Collection(SaatyModel.crud_StorageSelect_Result)">
+            <Parameter Name="Id_Storage" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="crud_StorageUpdate">
+            <Parameter Name="Id_Storage" Mode="In" Type="Int32" />
+            <Parameter Name="NombreStorage" Mode="In" Type="String" />
+            <Parameter Name="UrlStorage" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="crud___MigrationHistoryInsert_Result">
+          <Property Type="String" Name="ContextKey" Nullable="false" MaxLength="300" />
+          <Property Type="Binary" Name="Model" Nullable="false" />
+          <Property Type="String" Name="ProductVersion" Nullable="false" MaxLength="32" />
+        </ComplexType>
+        <ComplexType Name="crud___MigrationHistorySelect_Result">
+          <Property Type="String" Name="ContextKey" Nullable="false" MaxLength="300" />
+          <Property Type="Binary" Name="Model" Nullable="false" />
+          <Property Type="String" Name="ProductVersion" Nullable="false" MaxLength="32" />
+        </ComplexType>
+        <ComplexType Name="crud_Algoritmos_CifradoInsert_Result">
+          <Property Type="Int32" Name="Id_Algoritmo" Nullable="false" />
+          <Property Type="String" Name="Algoritmo" Nullable="true" />
+          <Property Type="String" Name="KeyUrl" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="crud_Algoritmos_CifradoSelect_Result">
+          <Property Type="Int32" Name="Id_Algoritmo" Nullable="false" />
+          <Property Type="String" Name="Algoritmo" Nullable="true" />
+          <Property Type="String" Name="KeyUrl" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="crud_AspNetRolesInsert_Result">
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="256" />
+        </ComplexType>
+        <ComplexType Name="crud_AspNetRolesSelect_Result">
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="256" />
+        </ComplexType>
+        <ComplexType Name="crud_AspNetUserClaimsInsert_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="ClaimType" Nullable="true" />
+          <Property Type="String" Name="ClaimValue" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="crud_AspNetUserClaimsSelect_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="ClaimType" Nullable="true" />
+          <Property Type="String" Name="ClaimValue" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="crud_AspNetUsersInsert_Result">
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="256" />
+          <Property Type="Boolean" Name="EmailConfirmed" Nullable="false" />
+          <Property Type="String" Name="PasswordHash" Nullable="true" />
+          <Property Type="String" Name="SecurityStamp" Nullable="true" />
+          <Property Type="String" Name="PhoneNumber" Nullable="true" />
+          <Property Type="Boolean" Name="PhoneNumberConfirmed" Nullable="false" />
+          <Property Type="Boolean" Name="TwoFactorEnabled" Nullable="false" />
+          <Property Type="DateTime" Name="LockoutEndDateUtc" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="LockoutEnabled" Nullable="false" />
+          <Property Type="Int32" Name="AccessFailedCount" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" />
+          <Property Type="String" Name="Discriminator" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="Nombre" Nullable="true" />
+          <Property Type="String" Name="Apellido" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="crud_AspNetUsersSelect_Result">
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="256" />
+          <Property Type="Boolean" Name="EmailConfirmed" Nullable="false" />
+          <Property Type="String" Name="PasswordHash" Nullable="true" />
+          <Property Type="String" Name="SecurityStamp" Nullable="true" />
+          <Property Type="String" Name="PhoneNumber" Nullable="true" />
+          <Property Type="Boolean" Name="PhoneNumberConfirmed" Nullable="false" />
+          <Property Type="Boolean" Name="TwoFactorEnabled" Nullable="false" />
+          <Property Type="DateTime" Name="LockoutEndDateUtc" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="LockoutEnabled" Nullable="false" />
+          <Property Type="Int32" Name="AccessFailedCount" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" />
+          <Property Type="String" Name="Discriminator" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="Nombre" Nullable="true" />
+          <Property Type="String" Name="Apellido" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="crud_Documentos_UsuariosInsert_Result">
+          <Property Type="Int32" Name="Id_Permisos" Nullable="false" />
+          <Property Type="Int32" Name="Id_Documento" Nullable="false" />
+          <Property Type="String" Name="Id_user" Nullable="true" MaxLength="128" />
+        </ComplexType>
+        <ComplexType Name="crud_Documentos_UsuariosSelect_Result">
+          <Property Type="Int32" Name="Id_Permisos" Nullable="false" />
+          <Property Type="Int32" Name="Id_Documento" Nullable="false" />
+          <Property Type="String" Name="Id_user" Nullable="true" MaxLength="128" />
+        </ComplexType>
+        <ComplexType Name="crud_DocumentosInsert_Result">
+          <Property Type="Int32" Name="Id_Documento" Nullable="false" />
+          <Property Type="Int32" Name="Id_NivelPrivacidad" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="true" />
+          <Property Type="Int32" Name="Numero_Segmentos" Nullable="true" />
+          <Property Type="String" Name="HashDocumento" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="crud_DocumentosSelect_Result">
+          <Property Type="Int32" Name="Id_Documento" Nullable="false" />
+          <Property Type="Int32" Name="Id_NivelPrivacidad" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="true" />
+          <Property Type="Int32" Name="Numero_Segmentos" Nullable="true" />
+          <Property Type="String" Name="HashDocumento" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="crud_Nivel_PrivacidadInsert_Result">
+          <Property Type="Int32" Name="Id_NivelPrivacidad" Nullable="false" />
+          <Property Type="Int32" Name="Id_Algoritmo" Nullable="false" />
+          <Property Type="String" Name="NivelPrivacidad" Nullable="true" />
+          <Property Type="String" Name="DescripcionPrivacidad" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="crud_Nivel_PrivacidadSelect_Result">
+          <Property Type="Int32" Name="Id_NivelPrivacidad" Nullable="false" />
+          <Property Type="Int32" Name="Id_Algoritmo" Nullable="false" />
+          <Property Type="String" Name="NivelPrivacidad" Nullable="true" />
+          <Property Type="String" Name="DescripcionPrivacidad" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="crud_SegmentacionInsert_Result">
+          <Property Type="Int32" Name="Id_Segmentacion" Nullable="false" />
+          <Property Type="Int32" Name="Id_Storage" Nullable="false" />
+          <Property Type="Int32" Name="Id_Documento" Nullable="false" />
+          <Property Type="Int32" Name="Posicion" Nullable="true" />
+          <Property Type="String" Name="UrlSegmento" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="HashSegmento" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="HashAnt" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="HashPos" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="crud_SegmentacionSelect_Result">
+          <Property Type="Int32" Name="Id_Segmentacion" Nullable="false" />
+          <Property Type="Int32" Name="Id_Storage" Nullable="false" />
+          <Property Type="Int32" Name="Id_Documento" Nullable="false" />
+          <Property Type="Int32" Name="Posicion" Nullable="true" />
+          <Property Type="String" Name="UrlSegmento" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="HashSegmento" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="HashAnt" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="HashPos" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="crud_StorageInsert_Result">
+          <Property Type="Int32" Name="Id_Storage" Nullable="false" />
+          <Property Type="String" Name="NombreStorage" Nullable="true" />
+          <Property Type="String" Name="UrlStorage" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="crud_StorageSelect_Result">
+          <Property Type="Int32" Name="Id_Storage" Nullable="false" />
+          <Property Type="String" Name="NombreStorage" Nullable="true" />
+          <Property Type="String" Name="UrlStorage" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SaatyModelStoreContainer" CdmEntityContainer="SaatyEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="SaatyModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Algoritmos_Cifrado">
+            <EntityTypeMapping TypeName="SaatyModel.Algoritmos_Cifrado">
+              <MappingFragment StoreEntitySet="Algoritmos_Cifrado">
+                <ScalarProperty Name="Id_Algoritmo" ColumnName="Id_Algoritmo" />
+                <ScalarProperty Name="Algoritmo" ColumnName="Algoritmo" />
+                <ScalarProperty Name="KeyUrl" ColumnName="KeyUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="SaatyModel.AspNetRoles">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="SaatyModel.AspNetUserClaims">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="SaatyModel.AspNetUserLogins">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="SaatyModel.AspNetUsers">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documentos">
+            <EntityTypeMapping TypeName="SaatyModel.Documentos">
+              <MappingFragment StoreEntitySet="Documentos">
+                <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+                <ScalarProperty Name="Id_NivelPrivacidad" ColumnName="Id_NivelPrivacidad" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Numero_Segmentos" ColumnName="Numero_Segmentos" />
+                <ScalarProperty Name="HashDocumento" ColumnName="HashDocumento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documentos_Usuarios">
+            <EntityTypeMapping TypeName="SaatyModel.Documentos_Usuarios">
+              <MappingFragment StoreEntitySet="Documentos_Usuarios">
+                <ScalarProperty Name="Id_Permisos" ColumnName="Id_Permisos" />
+                <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+                <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nivel_Privacidad">
+            <EntityTypeMapping TypeName="SaatyModel.Nivel_Privacidad">
+              <MappingFragment StoreEntitySet="Nivel_Privacidad">
+                <ScalarProperty Name="Id_NivelPrivacidad" ColumnName="Id_NivelPrivacidad" />
+                <ScalarProperty Name="Id_Algoritmo" ColumnName="Id_Algoritmo" />
+                <ScalarProperty Name="NivelPrivacidad" ColumnName="NivelPrivacidad" />
+                <ScalarProperty Name="DescripcionPrivacidad" ColumnName="DescripcionPrivacidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Segmentacion">
+            <EntityTypeMapping TypeName="SaatyModel.Segmentacion">
+              <MappingFragment StoreEntitySet="Segmentacion">
+                <ScalarProperty Name="Id_Segmentacion" ColumnName="Id_Segmentacion" />
+                <ScalarProperty Name="Id_Storage" ColumnName="Id_Storage" />
+                <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+                <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+                <ScalarProperty Name="UrlSegmento" ColumnName="UrlSegmento" />
+                <ScalarProperty Name="HashSegmento" ColumnName="HashSegmento" />
+                <ScalarProperty Name="HashAnt" ColumnName="HashAnt" />
+                <ScalarProperty Name="HashPos" ColumnName="HashPos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Storage">
+            <EntityTypeMapping TypeName="SaatyModel.Storage">
+              <MappingFragment StoreEntitySet="Storage">
+                <ScalarProperty Name="Id_Storage" ColumnName="Id_Storage" />
+                <ScalarProperty Name="NombreStorage" ColumnName="NombreStorage" />
+                <ScalarProperty Name="UrlStorage" ColumnName="UrlStorage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="SaatyModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="crud___MigrationHistoryDelete" FunctionName="SaatyModel.Store.crud___MigrationHistoryDelete" />
+          <FunctionImportMapping FunctionImportName="crud___MigrationHistoryInsert" FunctionName="SaatyModel.Store.crud___MigrationHistoryInsert">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud___MigrationHistoryInsert_Result">
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud___MigrationHistorySelect" FunctionName="SaatyModel.Store.crud___MigrationHistorySelect">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud___MigrationHistorySelect_Result">
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud___MigrationHistoryUpdate" FunctionName="SaatyModel.Store.crud___MigrationHistoryUpdate" />
+          <FunctionImportMapping FunctionImportName="crud_Algoritmos_CifradoDelete" FunctionName="SaatyModel.Store.crud_Algoritmos_CifradoDelete" />
+          <FunctionImportMapping FunctionImportName="crud_Algoritmos_CifradoInsert" FunctionName="SaatyModel.Store.crud_Algoritmos_CifradoInsert">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_Algoritmos_CifradoInsert_Result">
+                <ScalarProperty Name="Id_Algoritmo" ColumnName="Id_Algoritmo" />
+                <ScalarProperty Name="Algoritmo" ColumnName="Algoritmo" />
+                <ScalarProperty Name="KeyUrl" ColumnName="KeyUrl" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_Algoritmos_CifradoSelect" FunctionName="SaatyModel.Store.crud_Algoritmos_CifradoSelect">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_Algoritmos_CifradoSelect_Result">
+                <ScalarProperty Name="Id_Algoritmo" ColumnName="Id_Algoritmo" />
+                <ScalarProperty Name="Algoritmo" ColumnName="Algoritmo" />
+                <ScalarProperty Name="KeyUrl" ColumnName="KeyUrl" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_Algoritmos_CifradoUpdate" FunctionName="SaatyModel.Store.crud_Algoritmos_CifradoUpdate" />
+          <FunctionImportMapping FunctionImportName="crud_AspNetRolesDelete" FunctionName="SaatyModel.Store.crud_AspNetRolesDelete" />
+          <FunctionImportMapping FunctionImportName="crud_AspNetRolesInsert" FunctionName="SaatyModel.Store.crud_AspNetRolesInsert">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_AspNetRolesInsert_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_AspNetRolesSelect" FunctionName="SaatyModel.Store.crud_AspNetRolesSelect">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_AspNetRolesSelect_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_AspNetRolesUpdate" FunctionName="SaatyModel.Store.crud_AspNetRolesUpdate" />
+          <FunctionImportMapping FunctionImportName="crud_AspNetUserClaimsDelete" FunctionName="SaatyModel.Store.crud_AspNetUserClaimsDelete" />
+          <FunctionImportMapping FunctionImportName="crud_AspNetUserClaimsInsert" FunctionName="SaatyModel.Store.crud_AspNetUserClaimsInsert">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_AspNetUserClaimsInsert_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_AspNetUserClaimsSelect" FunctionName="SaatyModel.Store.crud_AspNetUserClaimsSelect">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_AspNetUserClaimsSelect_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_AspNetUserClaimsUpdate" FunctionName="SaatyModel.Store.crud_AspNetUserClaimsUpdate" />
+          <FunctionImportMapping FunctionImportName="crud_AspNetUserLoginsDelete" FunctionName="SaatyModel.Store.crud_AspNetUserLoginsDelete" />
+          <FunctionImportMapping FunctionImportName="crud_AspNetUserLoginsSelect" FunctionName="SaatyModel.Store.crud_AspNetUserLoginsSelect" />
+          <FunctionImportMapping FunctionImportName="crud_AspNetUserRolesDelete" FunctionName="SaatyModel.Store.crud_AspNetUserRolesDelete" />
+          <FunctionImportMapping FunctionImportName="crud_AspNetUserRolesSelect" FunctionName="SaatyModel.Store.crud_AspNetUserRolesSelect" />
+          <FunctionImportMapping FunctionImportName="crud_AspNetUsersDelete" FunctionName="SaatyModel.Store.crud_AspNetUsersDelete" />
+          <FunctionImportMapping FunctionImportName="crud_AspNetUsersInsert" FunctionName="SaatyModel.Store.crud_AspNetUsersInsert">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_AspNetUsersInsert_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_AspNetUsersSelect" FunctionName="SaatyModel.Store.crud_AspNetUsersSelect">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_AspNetUsersSelect_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_AspNetUsersUpdate" FunctionName="SaatyModel.Store.crud_AspNetUsersUpdate" />
+          <FunctionImportMapping FunctionImportName="crud_Documentos_UsuariosDelete" FunctionName="SaatyModel.Store.crud_Documentos_UsuariosDelete" />
+          <FunctionImportMapping FunctionImportName="crud_Documentos_UsuariosInsert" FunctionName="SaatyModel.Store.crud_Documentos_UsuariosInsert">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_Documentos_UsuariosInsert_Result">
+                <ScalarProperty Name="Id_Permisos" ColumnName="Id_Permisos" />
+                <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+                <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_Documentos_UsuariosSelect" FunctionName="SaatyModel.Store.crud_Documentos_UsuariosSelect">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_Documentos_UsuariosSelect_Result">
+                <ScalarProperty Name="Id_Permisos" ColumnName="Id_Permisos" />
+                <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+                <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_Documentos_UsuariosUpdate" FunctionName="SaatyModel.Store.crud_Documentos_UsuariosUpdate" />
+          <FunctionImportMapping FunctionImportName="crud_DocumentosDelete" FunctionName="SaatyModel.Store.crud_DocumentosDelete" />
+          <FunctionImportMapping FunctionImportName="crud_DocumentosInsert" FunctionName="SaatyModel.Store.crud_DocumentosInsert">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_DocumentosInsert_Result">
+                <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+                <ScalarProperty Name="Id_NivelPrivacidad" ColumnName="Id_NivelPrivacidad" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Numero_Segmentos" ColumnName="Numero_Segmentos" />
+                <ScalarProperty Name="HashDocumento" ColumnName="HashDocumento" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_DocumentosSelect" FunctionName="SaatyModel.Store.crud_DocumentosSelect">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_DocumentosSelect_Result">
+                <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+                <ScalarProperty Name="Id_NivelPrivacidad" ColumnName="Id_NivelPrivacidad" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Numero_Segmentos" ColumnName="Numero_Segmentos" />
+                <ScalarProperty Name="HashDocumento" ColumnName="HashDocumento" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_DocumentosUpdate" FunctionName="SaatyModel.Store.crud_DocumentosUpdate" />
+          <FunctionImportMapping FunctionImportName="crud_Nivel_PrivacidadDelete" FunctionName="SaatyModel.Store.crud_Nivel_PrivacidadDelete" />
+          <FunctionImportMapping FunctionImportName="crud_Nivel_PrivacidadInsert" FunctionName="SaatyModel.Store.crud_Nivel_PrivacidadInsert">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_Nivel_PrivacidadInsert_Result">
+                <ScalarProperty Name="Id_NivelPrivacidad" ColumnName="Id_NivelPrivacidad" />
+                <ScalarProperty Name="Id_Algoritmo" ColumnName="Id_Algoritmo" />
+                <ScalarProperty Name="NivelPrivacidad" ColumnName="NivelPrivacidad" />
+                <ScalarProperty Name="DescripcionPrivacidad" ColumnName="DescripcionPrivacidad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_Nivel_PrivacidadSelect" FunctionName="SaatyModel.Store.crud_Nivel_PrivacidadSelect">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_Nivel_PrivacidadSelect_Result">
+                <ScalarProperty Name="Id_NivelPrivacidad" ColumnName="Id_NivelPrivacidad" />
+                <ScalarProperty Name="Id_Algoritmo" ColumnName="Id_Algoritmo" />
+                <ScalarProperty Name="NivelPrivacidad" ColumnName="NivelPrivacidad" />
+                <ScalarProperty Name="DescripcionPrivacidad" ColumnName="DescripcionPrivacidad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_Nivel_PrivacidadUpdate" FunctionName="SaatyModel.Store.crud_Nivel_PrivacidadUpdate" />
+          <FunctionImportMapping FunctionImportName="crud_SegmentacionDelete" FunctionName="SaatyModel.Store.crud_SegmentacionDelete" />
+          <FunctionImportMapping FunctionImportName="crud_SegmentacionInsert" FunctionName="SaatyModel.Store.crud_SegmentacionInsert">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_SegmentacionInsert_Result">
+                <ScalarProperty Name="Id_Segmentacion" ColumnName="Id_Segmentacion" />
+                <ScalarProperty Name="Id_Storage" ColumnName="Id_Storage" />
+                <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+                <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+                <ScalarProperty Name="UrlSegmento" ColumnName="UrlSegmento" />
+                <ScalarProperty Name="HashSegmento" ColumnName="HashSegmento" />
+                <ScalarProperty Name="HashAnt" ColumnName="HashAnt" />
+                <ScalarProperty Name="HashPos" ColumnName="HashPos" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_SegmentacionSelect" FunctionName="SaatyModel.Store.crud_SegmentacionSelect">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_SegmentacionSelect_Result">
+                <ScalarProperty Name="Id_Segmentacion" ColumnName="Id_Segmentacion" />
+                <ScalarProperty Name="Id_Storage" ColumnName="Id_Storage" />
+                <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
+                <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+                <ScalarProperty Name="UrlSegmento" ColumnName="UrlSegmento" />
+                <ScalarProperty Name="HashSegmento" ColumnName="HashSegmento" />
+                <ScalarProperty Name="HashAnt" ColumnName="HashAnt" />
+                <ScalarProperty Name="HashPos" ColumnName="HashPos" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_SegmentacionUpdate" FunctionName="SaatyModel.Store.crud_SegmentacionUpdate" />
+          <FunctionImportMapping FunctionImportName="crud_StorageDelete" FunctionName="SaatyModel.Store.crud_StorageDelete" />
+          <FunctionImportMapping FunctionImportName="crud_StorageInsert" FunctionName="SaatyModel.Store.crud_StorageInsert">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_StorageInsert_Result">
+                <ScalarProperty Name="Id_Storage" ColumnName="Id_Storage" />
+                <ScalarProperty Name="NombreStorage" ColumnName="NombreStorage" />
+                <ScalarProperty Name="UrlStorage" ColumnName="UrlStorage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_StorageSelect" FunctionName="SaatyModel.Store.crud_StorageSelect">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SaatyModel.crud_StorageSelect_Result">
+                <ScalarProperty Name="Id_Storage" ColumnName="Id_Storage" />
+                <ScalarProperty Name="NombreStorage" ColumnName="NombreStorage" />
+                <ScalarProperty Name="UrlStorage" ColumnName="UrlStorage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="crud_StorageUpdate" FunctionName="SaatyModel.Store.crud_StorageUpdate" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

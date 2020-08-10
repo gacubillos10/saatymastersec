@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SaatyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Algoritmos_Cifrado">
+    <Key>
+      <PropertyRef Name="Id_Algoritmo" />
+    </Key>
+    <Property Name="Id_Algoritmo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Algoritmo" Type="varchar(max)" />
+    <Property Name="KeyUrl" Type="text" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" />
+    <Property Name="Apellido" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Documentos">
+    <Key>
+      <PropertyRef Name="Id_Documento" />
+    </Key>
+    <Property Name="Id_Documento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_NivelPrivacidad" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar(max)" />
+    <Property Name="Numero_Segmentos" Type="int" />
+    <Property Name="HashDocumento" Type="text" />
+  </EntityType>
+  <EntityType Name="Documentos_Usuarios">
+    <Key>
+      <PropertyRef Name="Id_Permisos" />
+    </Key>
+    <Property Name="Id_Permisos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Documento" Type="int" Nullable="false" />
+    <Property Name="Id_user" Type="varchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Nivel_Privacidad">
+    <Key>
+      <PropertyRef Name="Id_NivelPrivacidad" />
+    </Key>
+    <Property Name="Id_NivelPrivacidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Algoritmo" Type="int" Nullable="false" />
+    <Property Name="NivelPrivacidad" Type="varchar(max)" />
+    <Property Name="DescripcionPrivacidad" Type="text" />
+  </EntityType>
+  <EntityType Name="Segmentacion">
+    <Key>
+      <PropertyRef Name="Id_Segmentacion" />
+    </Key>
+    <Property Name="Id_Segmentacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Storage" Type="int" Nullable="false" />
+    <Property Name="Id_Documento" Type="int" Nullable="false" />
+    <Property Name="Posicion" Type="int" />
+    <Property Name="UrlSegmento" Type="text" />
+    <Property Name="HashSegmento" Type="text" />
+    <Property Name="HashAnt" Type="text" />
+    <Property Name="HashPos" Type="text" />
+  </EntityType>
+  <EntityType Name="Storage">
+    <Key>
+      <PropertyRef Name="Id_Storage" />
+    </Key>
+    <Property Name="Id_Storage" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreStorage" Type="varchar(max)" />
+    <Property Name="UrlStorage" Type="text" />
+  </EntityType>
+  <Association Name="FK__Documento__Id_Do__5165187F">
+    <End Role="Documentos" Type="Self.Documentos" Multiplicity="1" />
+    <End Role="Documentos_Usuarios" Type="Self.Documentos_Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documentos">
+        <PropertyRef Name="Id_Documento" />
+      </Principal>
+      <Dependent Role="Documentos_Usuarios">
+        <PropertyRef Name="Id_Documento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Documento__Id_Ni__534D60F1">
+    <End Role="Nivel_Privacidad" Type="Self.Nivel_Privacidad" Multiplicity="1" />
+    <End Role="Documentos" Type="Self.Documentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nivel_Privacidad">
+        <PropertyRef Name="Id_NivelPrivacidad" />
+      </Principal>
+      <Dependent Role="Documentos">
+        <PropertyRef Name="Id_NivelPrivacidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Nivel_Pri__Id_Al__5070F446">
+    <End Role="Algoritmos_Cifrado" Type="Self.Algoritmos_Cifrado" Multiplicity="1" />
+    <End Role="Nivel_Privacidad" Type="Self.Nivel_Privacidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Algoritmos_Cifrado">
+        <PropertyRef Name="Id_Algoritmo" />
+      </Principal>
+      <Dependent Role="Nivel_Privacidad">
+        <PropertyRef Name="Id_Algoritmo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Segmentac__Id_Do__52593CB8">
+    <End Role="Documentos" Type="Self.Documentos" Multiplicity="1" />
+    <End Role="Segmentacion" Type="Self.Segmentacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documentos">
+        <PropertyRef Name="Id_Documento" />
+      </Principal>
+      <Dependent Role="Segmentacion">
+        <PropertyRef Name="Id_Documento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Segmentac__Id_St__5441852A">
+    <End Role="Storage" Type="Self.Storage" Multiplicity="1" />
+    <End Role="Segmentacion" Type="Self.Segmentacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Storage">
+        <PropertyRef Name="Id_Storage" />
+      </Principal>
+      <Dependent Role="Segmentacion">
+        <PropertyRef Name="Id_Storage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="crud___MigrationHistoryDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ContextKey" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="crud___MigrationHistoryInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Model" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="ProductVersion" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="crud___MigrationHistorySelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ContextKey" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="crud___MigrationHistoryUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ContextKey" Type="nvarchar" Mode="In" />
+    <Parameter Name="Model" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="ProductVersion" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="crud_Algoritmos_CifradoDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Algoritmo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="crud_Algoritmos_CifradoInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Algoritmo" Type="varchar(max)" Mode="In" />
+    <Parameter Name="KeyUrl" Type="text" Mode="In" />
+  </Function>
+  <Function Name="crud_Algoritmos_CifradoSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Algoritmo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="crud_Algoritmos_CifradoUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Algoritmo" Type="int" Mode="In" />
+    <Parameter Name="Algoritmo" Type="varchar(max)" Mode="In" />
+    <Parameter Name="KeyUrl" Type="text" Mode="In" />
+  </Function>
+  <Function Name="crud_AspNetRolesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="crud_AspNetRolesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="crud_AspNetRolesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="crud_AspNetRolesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="nvarchar" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="crud_AspNetUserClaimsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="crud_AspNetUserClaimsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+    <Parameter Name="ClaimType" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ClaimValue" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="crud_AspNetUserClaimsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="crud_AspNetUserClaimsUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+    <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+    <Parameter Name="ClaimType" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ClaimValue" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="crud_AspNetUserLoginsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="crud_AspNetUserLoginsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="crud_AspNetUserRolesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RoleId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="crud_AspNetUserRolesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RoleId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="crud_AspNetUsersDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="crud_AspNetUsersInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmailConfirmed" Type="bit" Mode="In" />
+    <Parameter Name="PasswordHash" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="SecurityStamp" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="PhoneNumber" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="PhoneNumberConfirmed" Type="bit" Mode="In" />
+    <Parameter Name="TwoFactorEnabled" Type="bit" Mode="In" />
+    <Parameter Name="LockoutEndDateUtc" Type="datetime" Mode="In" />
+    <Parameter Name="LockoutEnabled" Type="bit" Mode="In" />
+    <Parameter Name="AccessFailedCount" Type="int" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Discriminator" Type="nvarchar" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Apellido" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="crud_AspNetUsersSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="crud_AspNetUsersUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmailConfirmed" Type="bit" Mode="In" />
+    <Parameter Name="PasswordHash" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="SecurityStamp" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="PhoneNumber" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="PhoneNumberConfirmed" Type="bit" Mode="In" />
+    <Parameter Name="TwoFactorEnabled" Type="bit" Mode="In" />
+    <Parameter Name="LockoutEndDateUtc" Type="datetime" Mode="In" />
+    <Parameter Name="LockoutEnabled" Type="bit" Mode="In" />
+    <Parameter Name="AccessFailedCount" Type="int" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Discriminator" Type="nvarchar" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Apellido" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="crud_Documentos_UsuariosDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Permisos" Type="int" Mode="In" />
+  </Function>
+  <Function Name="crud_Documentos_UsuariosInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Documento" Type="int" Mode="In" />
+    <Parameter Name="Id_user" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="crud_Documentos_UsuariosSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Permisos" Type="int" Mode="In" />
+  </Function>
+  <Function Name="crud_Documentos_UsuariosUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Permisos" Type="int" Mode="In" />
+    <Parameter Name="Id_Documento" Type="int" Mode="In" />
+    <Parameter Name="Id_user" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="crud_DocumentosDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Documento" Type="int" Mode="In" />
+  </Function>
+  <Function Name="crud_DocumentosInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_NivelPrivacidad" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Numero_Segmentos" Type="int" Mode="In" />
+    <Parameter Name="HashDocumento" Type="text" Mode="In" />
+  </Function>
+  <Function Name="crud_DocumentosSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Documento" Type="int" Mode="In" />
+  </Function>
+  <Function Name="crud_DocumentosUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Documento" Type="int" Mode="In" />
+    <Parameter Name="Id_NivelPrivacidad" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Numero_Segmentos" Type="int" Mode="In" />
+    <Parameter Name="HashDocumento" Type="text" Mode="In" />
+  </Function>
+  <Function Name="crud_Nivel_PrivacidadDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_NivelPrivacidad" Type="int" Mode="In" />
+  </Function>
+  <Function Name="crud_Nivel_PrivacidadInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Algoritmo" Type="int" Mode="In" />
+    <Parameter Name="NivelPrivacidad" Type="varchar(max)" Mode="In" />
+    <Parameter Name="DescripcionPrivacidad" Type="text" Mode="In" />
+  </Function>
+  <Function Name="crud_Nivel_PrivacidadSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_NivelPrivacidad" Type="int" Mode="In" />
+  </Function>
+  <Function Name="crud_Nivel_PrivacidadUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_NivelPrivacidad" Type="int" Mode="In" />
+    <Parameter Name="Id_Algoritmo" Type="int" Mode="In" />
+    <Parameter Name="NivelPrivacidad" Type="varchar(max)" Mode="In" />
+    <Parameter Name="DescripcionPrivacidad" Type="text" Mode="In" />
+  </Function>
+  <Function Name="crud_SegmentacionDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Segmentacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="crud_SegmentacionInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Storage" Type="int" Mode="In" />
+    <Parameter Name="Id_Documento" Type="int" Mode="In" />
+    <Parameter Name="Posicion" Type="int" Mode="In" />
+    <Parameter Name="UrlSegmento" Type="text" Mode="In" />
+    <Parameter Name="HashSegmento" Type="text" Mode="In" />
+    <Parameter Name="HashAnt" Type="text" Mode="In" />
+    <Parameter Name="HashPos" Type="text" Mode="In" />
+  </Function>
+  <Function Name="crud_SegmentacionSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Segmentacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="crud_SegmentacionUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Segmentacion" Type="int" Mode="In" />
+    <Parameter Name="Id_Storage" Type="int" Mode="In" />
+    <Parameter Name="Id_Documento" Type="int" Mode="In" />
+    <Parameter Name="Posicion" Type="int" Mode="In" />
+    <Parameter Name="UrlSegmento" Type="text" Mode="In" />
+    <Parameter Name="HashSegmento" Type="text" Mode="In" />
+    <Parameter Name="HashAnt" Type="text" Mode="In" />
+    <Parameter Name="HashPos" Type="text" Mode="In" />
+  </Function>
+  <Function Name="crud_StorageDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Storage" Type="int" Mode="In" />
+  </Function>
+  <Function Name="crud_StorageInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NombreStorage" Type="varchar(max)" Mode="In" />
+    <Parameter Name="UrlStorage" Type="text" Mode="In" />
+  </Function>
+  <Function Name="crud_StorageSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Storage" Type="int" Mode="In" />
+  </Function>
+  <Function Name="crud_StorageUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Storage" Type="int" Mode="In" />
+    <Parameter Name="NombreStorage" Type="varchar(max)" Mode="In" />
+    <Parameter Name="UrlStorage" Type="text" Mode="In" />
+  </Function>
+  <EntityContainer Name="SaatyModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Algoritmos_Cifrado" EntityType="Self.Algoritmos_Cifrado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documentos" EntityType="Self.Documentos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documentos_Usuarios" EntityType="Self.Documentos_Usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nivel_Privacidad" EntityType="Self.Nivel_Privacidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Segmentacion" EntityType="Self.Segmentacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Storage" EntityType="Self.Storage" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Documento__Id_Do__5165187F" Association="Self.FK__Documento__Id_Do__5165187F">
+      <End Role="Documentos" EntitySet="Documentos" />
+      <End Role="Documentos_Usuarios" EntitySet="Documentos_Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Documento__Id_Ni__534D60F1" Association="Self.FK__Documento__Id_Ni__534D60F1">
+      <End Role="Nivel_Privacidad" EntitySet="Nivel_Privacidad" />
+      <End Role="Documentos" EntitySet="Documentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Nivel_Pri__Id_Al__5070F446" Association="Self.FK__Nivel_Pri__Id_Al__5070F446">
+      <End Role="Algoritmos_Cifrado" EntitySet="Algoritmos_Cifrado" />
+      <End Role="Nivel_Privacidad" EntitySet="Nivel_Privacidad" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Segmentac__Id_Do__52593CB8" Association="Self.FK__Segmentac__Id_Do__52593CB8">
+      <End Role="Documentos" EntitySet="Documentos" />
+      <End Role="Segmentacion" EntitySet="Segmentacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Segmentac__Id_St__5441852A" Association="Self.FK__Segmentac__Id_St__5441852A">
+      <End Role="Storage" EntitySet="Storage" />
+      <End Role="Segmentacion" EntitySet="Segmentacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

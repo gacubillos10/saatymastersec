@@ -1,0 +1,5 @@
+C:\Users\wolfa\source\repos\SaatyWeb\Cifrado\bin\Debug\Cifrado.dll
+C:\Users\wolfa\source\repos\SaatyWeb\Cifrado\bin\Debug\Cifrado.pdb
+C:\Users\wolfa\source\repos\SaatyWeb\Cifrado\obj\Debug\Cifrado.csprojAssemblyReference.cache
+C:\Users\wolfa\source\repos\SaatyWeb\Cifrado\obj\Debug\Cifrado.dll
+C:\Users\wolfa\source\repos\SaatyWeb\Cifrado\obj\Debug\Cifrado.pdb
