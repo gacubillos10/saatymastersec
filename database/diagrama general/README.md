@@ -1,1 +1,1 @@
-contine el drigrama general de funcionamiento.
+contiene el drigrama general de funcionamiento.
