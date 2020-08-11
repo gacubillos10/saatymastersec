@@ -1,1 +1,1 @@
-contiene el drigrama general de funcionamiento.
+contiene el diagrama general de funcionamiento.
