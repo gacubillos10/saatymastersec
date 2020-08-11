@@ -1,0 +1,1 @@
+vistas de las api de particionamiento, cifrado y  distribucion.

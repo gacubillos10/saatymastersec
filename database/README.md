@@ -1,0 +1,1 @@
+contiene los driagramas y los scripts de creacion de las bases de datos para documentos y para el key manager.

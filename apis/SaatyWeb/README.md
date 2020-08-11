@@ -1,0 +1,1 @@
+contiene las api de particionamiento, cifrado y distribucion en multiples nubes.

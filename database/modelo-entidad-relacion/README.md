@@ -1,0 +1,1 @@
+contiene los modelos entidad relacion y de mañanejo de llaves.

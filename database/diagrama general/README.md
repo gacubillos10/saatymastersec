@@ -1,0 +1,1 @@
+contine el drigrama general de funcionamiento.

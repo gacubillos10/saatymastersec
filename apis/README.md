@@ -1,0 +1,2 @@
+el folder SaatyWeb contiene las api de particionamiento, cifrado y distribucion en multiples nubes.
+el folder Saaty contiene el sitio en asp.net para la creacion y gestion de permisos, roles y usuarios.
